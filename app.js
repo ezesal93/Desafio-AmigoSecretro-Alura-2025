@@ -15,9 +15,19 @@ function agregarAmigo() {
         listaAmigos.push(nombreIngresado);
         document.getElementById("amigo").value = "";
     }
+    //Llama al a función mostrarLista
+    mostrarListaAmigos();
 
     return;
 }
 
+
+function mostrarListaAmigos(){
+    let listaActualizada = document.getElementById("listaAmigos");
+    listaActualizada.innerHTML = "";
+
+    listaAmigos.forEach(function (elemento) {
+    });
+}
 
 
