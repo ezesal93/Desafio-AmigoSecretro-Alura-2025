@@ -26,8 +26,13 @@ function mostrarListaAmigos(){
     let listaActualizada = document.getElementById("listaAmigos");
     listaActualizada.innerHTML = "";
 
-    listaAmigos.forEach(function (elemento) {
+    listaAmigos.forEach(function (nombreAmigo) {
+        let nuevoElemento = document.createElement("li"); // Crear un <li>
+        nuevoElemento.textContent = nombreAmigo; // Asignar el nombre al <li>
+        listaActualizada.appendChild(nuevoElemento); // Agregar el <li> a la lista
     });
+
+    console.log("Lista de amigos actualizada:", listaAmigos);
 }
 
 
