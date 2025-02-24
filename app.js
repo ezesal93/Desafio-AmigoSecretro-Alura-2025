@@ -17,7 +17,6 @@ function agregarAmigo() {
     }
     //Llama al a función mostrarLista
     mostrarListaAmigos();
-
     return;
 }
 
@@ -25,6 +24,7 @@ function agregarAmigo() {
 function mostrarListaAmigos(){
     let listaActualizada = document.getElementById("listaAmigos");
     listaActualizada.innerHTML = "";
+    document.getElementById("resultado").innerHTML = "";
 
     listaAmigos.forEach(function (nombreAmigo) {
         let nuevoElemento = document.createElement("li"); // Crear un <li>
@@ -33,6 +33,24 @@ function mostrarListaAmigos(){
     });
 
     console.log("Lista de amigos actualizada:", listaAmigos);
+}
+
+
+function sortearAmigo(){
+    if (listaAmigos.length === 0){
+        document.getElementById("resultado").innerHTML = "No hay amigos en la lista.";
+        return;
+    } else {
+        generarIndice()
+        let amigoSorteado = listaAmigos[numeroGenerado];
+        document.getElementById("resultado").innerHTML = "Amigo sorteado: " + amigoSorteado;
+    }
+
+}
+
+function generarIndice() { 
+    let numeroGenerado = (Math.floor(Math.random()*(listaAmigos.length)));
+    return numeroGenerado;
 }
 
 
