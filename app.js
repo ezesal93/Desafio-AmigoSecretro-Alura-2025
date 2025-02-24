@@ -1,14 +1,10 @@
 let listaAmigos = [];
 
-
-
-
-
 function agregarAmigo() {
     //Alacena el nombre ingresado
-    let nombreIngresado =  document.getElementById("amigo").value;
+    let nombreIngresado =  document.getElementById("amigo").value.trim();
 
-    if (nombreIngresado == "") {
+    if (nombreIngresado === "") {
         alert("Por favor, inserte un nombre");
     } else {
         //Agregar nombre
@@ -17,7 +13,6 @@ function agregarAmigo() {
     }
     //Llama al a función mostrarLista
     mostrarListaAmigos();
-    return;
 }
 
 
@@ -41,16 +36,10 @@ function sortearAmigo(){
         document.getElementById("resultado").innerHTML = "No hay amigos en la lista.";
         return;
     } else {
-        generarIndice()
+        let numeroGenerado = (Math.floor(Math.random()*(listaAmigos.length)));
         let amigoSorteado = listaAmigos[numeroGenerado];
         document.getElementById("resultado").innerHTML = "Amigo sorteado: " + amigoSorteado;
     }
 
 }
-
-function generarIndice() { 
-    let numeroGenerado = (Math.floor(Math.random()*(listaAmigos.length)));
-    return numeroGenerado;
-}
-
 
